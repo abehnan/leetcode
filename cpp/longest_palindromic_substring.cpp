@@ -8,8 +8,8 @@
 
 class Solution {
 public:
-    // dynamic programming approach
-    static std::string longestPalindrome(const std::string &str) { // O(n%2
+    // dynamic programming approach, O(n^2)
+    static std::string longestPalindrome(const std::string &str) {
         auto n = str.length();
         std::vector<std::vector<bool>> dp(n, std::vector<bool>(n, false));
         auto maxLength = 1;
