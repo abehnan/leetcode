@@ -1,70 +1,15 @@
 /**
- * (Given) Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- *
  * You are given two non-empty linked lists representing two non-negative integers.
  * The digits are stored in reverse order, and each of their nodes contains a single digit.
  * Add the two numbers and return the sum as a linked list.
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
  */
 
-#include <cmath>
 #include <cassert>
 #include <vector>
+#include "include/list_helper.h"
 
-namespace {
-    struct ListNode {
-        int val = 0;
-        ListNode *next = nullptr;
-
-        explicit ListNode() = default;
-
-        explicit ListNode(int x) : val(x), next(nullptr) {}
-    };
-
-    int getNumber(ListNode *list) {
-        int exp = 0;
-        int result = 0;
-        ListNode *node = list;
-
-        while (node != nullptr) {
-            result += node->val * static_cast<int>(std::pow(10, exp++));
-            node = node->next;
-        }
-
-        return result;
-    }
-
-    ListNode *buildList(int number) {
-        ListNode *result = nullptr;
-        ListNode *currentNode, *previousNode = nullptr;
-
-        if (number == 0) {
-            return new ListNode();
-        }
-
-        while (number > 0) {
-            currentNode = new ListNode(number % 10);
-
-            if (previousNode) {
-                previousNode->next = currentNode;
-            } else {
-                result = currentNode;
-            }
-
-            previousNode = currentNode;
-            number /= 10;
-        }
-
-        return result;
-    }
-}
+using namespace ListHelper;
 
 class Solution {
 public:
