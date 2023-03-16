@@ -10,12 +10,11 @@
 using namespace ListHelper;
 
 class Solution {
-public:
-    static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
-        return nullptr;
-    }
+//public:
+//    static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
+//        return nullptr;
+//    }
 };
-
 
 int main() {
     ListNode *firstNumber = buildList(457);
@@ -25,7 +24,6 @@ int main() {
     ListNode *secondNumber = buildList(129);
     int y = getNumber(secondNumber);
     assert(y == 129);
-
 
     return 0;
 }

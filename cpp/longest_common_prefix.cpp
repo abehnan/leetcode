@@ -24,7 +24,7 @@ public:
         std::string result;
         std::string first = strings.front();
         std::string last = strings.back();
-        int index = 0;
+        auto index = 0u;
 
         while (index < first.size()
                && index < last.size()

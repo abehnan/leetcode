@@ -27,7 +27,7 @@
 
 class Solution {
 public:
-    static int romanToInt(const std::string &str) {
+    static unsigned int romanToInt(const std::string &str) {
         const std::unordered_map<char, int> romanToDecimal = {
                 {'I', 1},
                 {'V', 5},
@@ -38,9 +38,9 @@ public:
                 {'M', 1000}
         };
 
-        int result = 0;
+        auto result = 0u;
 
-        for (auto i = 0; i < str.length(); i++) {
+        for (auto i = 0u; i < str.length(); i++) {
             const bool lessThanNext = i < str.length() - 1
                                       && romanToDecimal.at(str[i]) < romanToDecimal.at(str[i + 1]);
 
