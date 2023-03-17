@@ -27,37 +27,38 @@
 
 class Solution {
 public:
-    static unsigned int romanToInt(const std::string &str) {
-        const std::unordered_map<char, int> romanToDecimal = {
-                {'I', 1},
-                {'V', 5},
-                {'X', 10},
-                {'L', 50},
-                {'C', 100},
-                {'D', 500},
-                {'M', 1000}
-        };
+	static unsigned int romanToInt(const std::string& str)
+	{
+		const std::unordered_map<char, int> romanToDecimal = {
+			{ 'I', 1 },
+			{ 'V', 5 },
+			{ 'X', 10 },
+			{ 'L', 50 },
+			{ 'C', 100 },
+			{ 'D', 500 },
+			{ 'M', 1000 }
+		};
 
-        auto result = 0u;
+		auto result = 0u;
 
-        for (auto i = 0u; i < str.length(); i++) {
-            const bool lessThanNext = i < str.length() - 1
-                                      && romanToDecimal.at(str[i]) < romanToDecimal.at(str[i + 1]);
+		for (auto i = 0u; i < str.length(); i++) {
+			const bool lessThanNext = i < str.length() - 1 && romanToDecimal.at(str[i]) < romanToDecimal.at(str[i + 1]);
 
-            if (lessThanNext) {
-                result -= romanToDecimal.at(str[i]);
-            } else {
-                result += romanToDecimal.at(str[i]);
-            }
-        }
+			if (lessThanNext) {
+				result -= romanToDecimal.at(str[i]);
+			} else {
+				result += romanToDecimal.at(str[i]);
+			}
+		}
 
-        return result;
-    }
+		return result;
+	}
 };
 
-int main() {
-    assert(Solution::romanToInt("III") == 3);
-    assert(Solution::romanToInt("LVIII") == 58);
-    assert(Solution::romanToInt("MCMXCIV") == 1994);
-    return 0;
+int main()
+{
+	assert(Solution::romanToInt("III") == 3);
+	assert(Solution::romanToInt("LVIII") == 58);
+	assert(Solution::romanToInt("MCMXCIV") == 1994);
+	return 0;
 }

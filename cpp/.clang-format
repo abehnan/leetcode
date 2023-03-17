@@ -1,0 +1,13 @@
+AlignAfterOpenBracket: DontAlign
+BasedOnStyle: WebKit
+BreakBeforeBinaryOperators: None
+BreakConstructorInitializers: BeforeComma
+CompactNamespaces: true
+ContinuationIndentWidth: 4
+IndentCaseLabels: true
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: All
+UseTab: Always
+TabWidth: 4
+BinPackArguments: false
+BinPackParameters: false

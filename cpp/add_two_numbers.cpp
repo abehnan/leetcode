@@ -13,50 +13,51 @@ using namespace ListHelper;
 
 class Solution {
 public:
-    static ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        int carry = 0, sum;
-        ListNode *current = new ListNode(), *result = current;
+	static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+	{
+		int carry = 0, sum;
+		ListNode *current = new ListNode(), *result = current;
 
-        while (l1 || l2 || carry) {
-            sum = carry;
+		while (l1 || l2 || carry) {
+			sum = carry;
 
-            if (l1) {
-                sum += l1->val;
-                l1 = l1->next;
-            }
+			if (l1) {
+				sum += l1->val;
+				l1 = l1->next;
+			}
 
-            if (l2) {
-                sum += l2->val;
-                l2 = l2->next;
-            }
+			if (l2) {
+				sum += l2->val;
+				l2 = l2->next;
+			}
 
-            carry = sum / 10;
-            sum %= 10;
+			carry = sum / 10;
+			sum %= 10;
 
-            // Not a huge fan of returning something on the heap, but LeetCode expects it.
-            current->next = new ListNode(sum);
-            current = current->next;
-        }
+			// Not a huge fan of returning something on the heap, but LeetCode expects it.
+			current->next = new ListNode(sum);
+			current = current->next;
+		}
 
-        return result->next;
-    }
+		return result->next;
+	}
 };
 
+int main()
+{
+	ListNode* firstNumber = buildList(453);
+	int x = getNumber(firstNumber);
+	assert(x == 453);
 
-int main() {
-    ListNode *firstNumber = buildList(453);
-    int x = getNumber(firstNumber);
-    assert(x == 453);
+	ListNode* secondNumber = buildList(101);
+	int y = getNumber(secondNumber);
+	assert(y == 101);
 
-    ListNode *secondNumber = buildList(101);
-    int y = getNumber(secondNumber);
-    assert(y == 101);
+	assert(getNumber(Solution::addTwoNumbers(buildList(342), buildList(465))) == 807);
 
-    assert(getNumber(Solution::addTwoNumbers(buildList(342), buildList(465))) == 807);
+	assert(getNumber(Solution::addTwoNumbers(
+			   buildList(5132948),
+			   buildList(851793462))) == 856926410);
 
-    assert(getNumber(Solution::addTwoNumbers(
-            buildList(5132948),
-            buildList(851793462))) == 856926410);
-
-    return 0;
+	return 0;
 }
