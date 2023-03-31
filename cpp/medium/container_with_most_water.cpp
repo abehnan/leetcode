@@ -38,7 +38,8 @@ public:
 	static int maxArea(const vector<int>& height)
 	{
 		auto n = static_cast<int>(height.size());
-		auto l = 0, r = n - 1;
+		auto l = 0;
+		auto r = n - 1;
 		auto maxArea = 0;
 
 		while (l < r) {
