@@ -12,36 +12,59 @@
  * Notice that the order of the output and the order of the triplets does not matter.
  */
 
+#include <algorithm>
 #include <cassert>
+#include <set>
 #include <vector>
 
 using namespace std;
 
 class Solution {
 public:
-	// Brute force O(n^3), no extra space
 	static vector<vector<int>> threeSumBruteForce(const vector<int>& nums)
 	{
-		vector<vector<int>> results;
+		set<vector<int>> temp;
 
-		for (const auto& i : nums) {
-			for (const auto& j : nums) {
-				for (const auto& k : nums) {
-					if (i != j && i != k && j != k && i + j + k == 0) {
-						results.emplace_back(vector<int> { i, j, k });
+		for (auto i = 0u; i < nums.size(); ++i) {
+			for (auto j = 0u; j < nums.size(); ++j) {
+				for (auto k = 0u; k < nums.size(); ++k) {
+					if (i != j && i != k && j != k && nums[i] + nums[j] + nums[k] == 0) {
+						vector<int> newEntry = { nums[i], nums[j], nums[k] };
+						sort(newEntry.begin(), newEntry.end());
+						temp.emplace(std::move(newEntry));
 					}
 				}
 			}
 		}
 
-		return results;
+		if (temp.empty()) {
+			return {};
+		}
+
+		vector<vector<int>> result;
+		result.reserve(temp.size());
+
+		for (const auto& entry : temp) {
+			result.emplace_back(entry);
+		}
+
+		return result;
 	}
 };
 
 int main()
 {
-	assert(Solution::threeSumBruteForce({ 0, 1, 1 }).empty());
-	vector<vector<int>> expected = { { -1, -1, 2 }, { -1, 0, 1 } };
-	assert(Solution::threeSumBruteForce({ -1, 0, 1, 2, -1, -4 }) == expected);
+	vector<vector<int>> expected;
+	vector<vector<int>> result;
+
+	result = Solution::threeSumBruteForce({ 0, 1, 1 });
+	assert(result.empty());
+	expected = { { -1, -1, 2 }, { -1, 0, 1 } };
+	result = Solution::threeSumBruteForce({ -1, 0, 1, 2, -1, -4 });
+	assert(result == expected);
+	expected = { { 0, 0, 0 } };
+	result = Solution::threeSumBruteForce({ 0, 0, 0 });
+	assert(result == expected);
+
 	return 0;
 }
