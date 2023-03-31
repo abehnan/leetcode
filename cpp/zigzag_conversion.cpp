@@ -19,7 +19,7 @@ using namespace std;
 class Solution {
 public:
 	// brute force solution - O(stringLength * numRows)
-	static string convert(string s, int numRows)
+	static string convertBruteForce(string s, int numRows)
 	{
 		if (numRows <= 1 || s.empty()) {
 			return s;
@@ -56,11 +56,53 @@ public:
 
 		return result;
 	}
+
+	// O(stringLength) with the trade-off of higher space complexity
+	static string convert(string s, int numRows)
+	{
+		if (numRows == 1) {
+			return s;
+		}
+
+		vector<string> rows(numRows);
+		int currRow = 0;
+		bool isGoingDown = false;
+		string result;
+
+		for (char const c : s) {
+			rows[currRow] += c;
+
+			if (currRow == 0 || currRow == numRows - 1) {
+				isGoingDown = !isGoingDown;
+			}
+
+			currRow += isGoingDown ? 1 : -1;
+		}
+
+		for (const string& row : rows) {
+			result += row;
+		}
+
+		return result;
+	}
 };
 
 int main()
 {
-	for (auto i = 0; i < 10; i++) {
+	constexpr int MAX_INDEX_FOR_NULL_TESTS = 10;
+
+	for (auto i = 0; i < MAX_INDEX_FOR_NULL_TESTS; i++) {
+		assert(Solution::convertBruteForce("", i).empty());
+	}
+
+	assert(Solution::convertBruteForce("TEMPA", 1) == "TEMPA");
+	assert(Solution::convertBruteForce("ZOOMIE", 1) == "ZOOMIE");
+	assert(Solution::convertBruteForce("fOo", 1) == "fOo");
+	assert(Solution::convertBruteForce("TEMP", 2) == "TMEP");
+	assert(Solution::convertBruteForce("PAYPALISHIRING", 3) == "PAHNAPLSIIGYIR");
+	assert(Solution::convertBruteForce("PAYPALISHIRING", 4) == "PINALSIGYAHRPI");
+
+	for (auto i = 0; i < MAX_INDEX_FOR_NULL_TESTS; i++) {
 		assert(Solution::convert("", i).empty());
 	}
 
