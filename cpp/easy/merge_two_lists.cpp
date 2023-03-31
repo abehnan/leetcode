@@ -4,8 +4,8 @@
  * Return the head of the merged linked list.
  */
 
+#include "../include/list_helper.h"
 #include <cassert>
-#include "include/list_helper.h"
 
 using namespace ListHelper;
 

@@ -5,9 +5,9 @@
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
  */
 
+#include "../include/list_helper.h"
 #include <cassert>
 #include <vector>
-#include "include/list_helper.h"
 
 using namespace ListHelper;
 
