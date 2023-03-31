@@ -19,14 +19,29 @@ using namespace std;
 
 class Solution {
 public:
-	static vector<vector<int>> threeSum(const vector<int>& /*nums*/)
+	// Brute force O(n^3), no extra space
+	static vector<vector<int>> threeSumBruteForce(const vector<int>& nums)
 	{
-		return {};
+		vector<vector<int>> results;
+
+		for (const auto& i : nums) {
+			for (const auto& j : nums) {
+				for (const auto& k : nums) {
+					if (i != j && i != k && j != k && i + j + k == 0) {
+						results.emplace_back(vector<int> { i, j, k });
+					}
+				}
+			}
+		}
+
+		return results;
 	}
 };
 
 int main()
 {
-	assert(Solution::threeSum({ 0, 1, 1 }).empty());
+	assert(Solution::threeSumBruteForce({ 0, 1, 1 }).empty());
+	vector<vector<int>> expected = { { -1, -1, 2 }, { -1, 0, 1 } };
+	assert(Solution::threeSumBruteForce({ -1, 0, 1, 2, -1, -4 }) == expected);
 	return 0;
 }
