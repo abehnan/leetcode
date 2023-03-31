@@ -16,6 +16,7 @@ using namespace std;
 
 class Solution {
 public:
+	// The time complexity of this function is O(n^2), where n is the size of the input vector nums.
 	static int threeSumClosest(vector<int>& nums, int target)
 	{
 		sort(nums.begin(), nums.end());

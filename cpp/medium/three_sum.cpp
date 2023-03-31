@@ -53,8 +53,6 @@ public:
 	}
 
 	// The time complexity of this function is O(n^2), where n is the size of the input vector nums.
-	// The outer for loop will iterate n-2 times, and the inner while loop will run a maximum of n times for each iteration of the outer loop.
-	// Resulting in a total worst-case time complexity of O(n^2).
 	static vector<vector<int>> threeSum(vector<int>& nums)
 	{
 		sort(nums.begin(), nums.end());
