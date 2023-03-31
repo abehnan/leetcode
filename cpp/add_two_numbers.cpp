@@ -13,6 +13,7 @@ using namespace ListHelper;
 
 class Solution {
 public:
+	// O(n)
 	static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 	{
 		int carry = 0, sum;

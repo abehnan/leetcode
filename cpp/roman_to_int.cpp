@@ -27,6 +27,7 @@
 
 class Solution {
 public:
+	// O(n)
 	static unsigned int romanToInt(const std::string& str)
 	{
 		const std::unordered_map<char, int> romanToDecimal = {

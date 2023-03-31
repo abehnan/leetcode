@@ -10,6 +10,7 @@
 
 class Solution {
 public:
+	// O(n log n)
 	static std::string longestCommonPrefix(std::vector<std::string>& strings)
 	{
 		if (strings.empty()) {

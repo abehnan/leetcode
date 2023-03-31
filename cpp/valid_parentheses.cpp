@@ -20,9 +20,9 @@ public:
 
 		std::stack<char> stack;
 
-		for (const char* c = str.c_str(); *c != '\0'; c++) {
+		for (auto c : str) {
 			if (stack.empty()) {
-				stack.push(*c);
+				stack.push(c);
 				continue;
 			}
 
@@ -30,19 +30,19 @@ public:
 
 			switch (top) {
 				case '[':
-					if (*c == ']') {
+					if (c == ']') {
 						stack.pop();
 						continue;
 					}
 					break;
 				case '{':
-					if (*c == '}') {
+					if (c == '}') {
 						stack.pop();
 						continue;
 					}
 					break;
 				case '(':
-					if (*c == ')') {
+					if (c == ')') {
 						stack.pop();
 						continue;
 					}
@@ -51,7 +51,7 @@ public:
 					break;
 			}
 
-			stack.push(*c);
+			stack.push(c);
 		}
 
 		return stack.empty();

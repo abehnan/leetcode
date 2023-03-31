@@ -10,6 +10,7 @@
 
 class Solution {
 public:
+	// O(n^2)
 	static int lengthOfLongestSubstringBruteForce(const std::string& s)
 	{
 		std::set<char> visited;

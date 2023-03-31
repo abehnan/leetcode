@@ -11,6 +11,7 @@ using namespace ListHelper;
 
 class Solution {
 public:
+	// O(n)
 	static ListNode* mergeTwoLists(ListNode* left, ListNode* right)
 	{
 		auto result = new ListNode();

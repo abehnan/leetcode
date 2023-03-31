@@ -49,8 +49,9 @@ public:
 		return str.substr(start, maxLength);
 	}
 
+	// O(n^3)
 	static std::string longestPalindromeBruteForce(const std::string& str)
-	{ // O(n^3)
+	{
 		auto n = str.length();
 		auto maxLength = 1u;
 		auto start = 0u;
