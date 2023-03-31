@@ -21,12 +21,12 @@ public:
 	// Brute Force, O(n^2)
 	static int maxAreaBruteForce(const vector<int>& height)
 	{
-		int n = static_cast<int>(height.size());
-		int result = 0;
+		auto n = static_cast<int>(height.size());
+		auto result = 0;
 
-		for (int l = 0; l < n; ++l) {
-			for (int r = n - 1; r > l; --r) {
-				int area = min(height[l], height[r]) * (r - l);
+		for (auto l = 0; l < n; ++l) {
+			for (auto r = n - 1; r > l; --r) {
+				auto area = min(height[l], height[r]) * (r - l);
 				result = max(result, area);
 			}
 		}
@@ -37,12 +37,12 @@ public:
 	// Solution turns into O(n) if you use a sliding window instead.
 	static int maxArea(const vector<int>& height)
 	{
-		int n = static_cast<int>(height.size());
-		int l = 0, r = n - 1;
-		int maxArea = 0;
+		auto n = static_cast<int>(height.size());
+		auto l = 0, r = n - 1;
+		auto maxArea = 0;
 
 		while (l < r) {
-			int area = min(height[l], height[r]) * (r - l);
+			auto area = min(height[l], height[r]) * (r - l);
 			maxArea = max(maxArea, area);
 
 			if (height[l] < height[r]) {
