@@ -3,7 +3,6 @@
  */
 
 #include <cassert>
-#include <set>
 #include <stack>
 #include <string>
 #include <unordered_set>
@@ -13,7 +12,7 @@ public:
 	// O(n^2)
 	static int lengthOfLongestSubstringBruteForce(const std::string& s)
 	{
-		std::set<char> visited;
+		std::unordered_set<char> visited;
 		int result = 0;
 
 		for (const char* c = s.c_str(); *c != '\0'; c++) {
