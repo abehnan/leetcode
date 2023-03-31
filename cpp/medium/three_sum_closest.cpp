@@ -16,16 +16,58 @@ using namespace std;
 
 class Solution {
 public:
-	static int threeSumClosest(vector<int>& /*nums*/, int /*target*/)
+	static int threeSumClosest(vector<int>& nums, int target)
 	{
-		return 0;
+		sort(nums.begin(), nums.end());
+		auto n = static_cast<int>(nums.size()), result = 0, minDiff = INT_MAX;
+
+		for (auto i = 0; i < n - 2; i++) {
+			if (i != 0 && nums[i] == nums[i - 1]) {
+				continue; // skip duplicates
+			}
+
+			auto l = i + 1, r = n - 1;
+			auto remainder = target - nums[i];
+
+			while (l < r) {
+				auto sum = nums[i] + nums[l] + nums[r];
+
+				if (sum == target) {
+					return sum;
+				}
+
+				auto diff = abs(target - sum);
+
+				if (diff < minDiff) {
+					minDiff = diff;
+					result = sum;
+				}
+
+				if (nums[l] + nums[r] < remainder) {
+					l++;
+				} else if (nums[l] + nums[r] > remainder) {
+					r--;
+				}
+			}
+		}
+
+		return result;
 	}
 };
 
 int main()
 {
-	vector<int> nums;
-	int target = 0;
-	assert(Solution::threeSumClosest(nums, target) == 0);
+	auto nums = std::vector<int> { -1, 2, 1, -4 };
+	auto target = 1;
+	auto expected = 2;
+	auto result = Solution::threeSumClosest(nums, target);
+	assert(result == expected);
+
+	nums = { 0, 0, 0 };
+	target = 1;
+	expected = 0;
+	result = Solution::threeSumClosest(nums, target);
+	assert(result == expected);
+
 	return 0;
 }
