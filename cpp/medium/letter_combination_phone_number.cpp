@@ -43,25 +43,27 @@ public:
 			{ '9', { 'w', 'x', 'y', 'z' } },
 		};
 
-		auto numPermutations = [&digits, &map](unsigned int index) -> unsigned int {
-			auto numPermutations = 1u;
+		const auto multiplierForIndex = [&digits, &map](const unsigned int index) -> unsigned int {
+			auto multiplier = 1u;
 
 			for (auto i = 0u; i < digits.size(); i++) {
 				if (i == index) {
 					continue;
 				}
 
-				numPermutations *= map.at(digits[i]).size();
+				multiplier *= map.at(digits[i]).size();
 			}
 
-			return numPermutations;
+			return multiplier;
 		};
 
 		auto results = vector<string> {};
 
 		if (!digits.empty()) {
+			const auto multiplier = multiplierForIndex(0);
+
 			for (const auto& c : map.at(digits[0])) {
-				for (auto i = 0u; i < numPermutations(0); i++) {
+				for (auto i = 0u; i < multiplier; i++) {
 					results.emplace_back(1, c);
 				}
 			}
@@ -69,7 +71,9 @@ public:
 
 		if (digits.size() > 1) {
 			auto index = 0u;
-			for (auto i = 0u; i < numPermutations(1); i++) {
+			const auto multiplier = multiplierForIndex(1);
+
+			for (auto i = 0u; i < multiplier; i++) {
 				for (const auto& c : map.at(digits[1])) {
 					results[index++] += c;
 				}
@@ -78,7 +82,7 @@ public:
 
 		for (auto i = 2u; i < digits.size(); i++) {
 			auto index = 0u;
-			auto letters = map.at(digits[i]);
+			const auto& letters = map.at(digits[i]);
 			auto it = letters.begin();
 			sort(results.begin(), results.end());
 
