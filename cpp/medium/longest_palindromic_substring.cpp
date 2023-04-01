@@ -12,19 +12,21 @@ public:
 	static std::string longestPalindrome(const std::string& str)
 	{
 		auto n = str.length();
-		auto dp = std::vector<std::vector<bool>>(n, std::vector<bool>(n, false));
 		auto maxLength = 1u;
 		auto start = 0u;
 
+		// results[i][j] is true if str[i..j] is a palindrome
+		auto results = std::vector<std::vector<bool>>(n, std::vector<bool>(n, false));
+
 		// All substrings of length 1 are palindromes
 		for (auto i = 0u; i < n; i++) {
-			dp[i][i] = true;
+			results[i][i] = true;
 		}
 
 		// Check substrings of length 2
 		for (auto i = 0u; i < n - 1; i++) {
 			if (str[i] == str[i + 1]) {
-				dp[i][i + 1] = true;
+				results[i][i + 1] = true;
 				maxLength = 2;
 				start = i;
 			}
@@ -35,8 +37,8 @@ public:
 			for (auto i = 0u; i <= n - len; i++) {
 				auto j = i + len - 1;
 
-				if (str[i] == str[j] && dp[i + 1][j - 1]) {
-					dp[i][j] = true;
+				if (str[i] == str[j] && results[i + 1][j - 1]) {
+					results[i][j] = true;
 
 					if (len > maxLength) {
 						maxLength = len;
