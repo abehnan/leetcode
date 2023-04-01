@@ -34,7 +34,7 @@ public:
 		return result;
 	}
 
-	// Solution turns into O(n) if you use a sliding window instead.
+	// Solution turns into O(n) if you use a shrinking window instead.
 	static int maxArea(const vector<int>& height)
 	{
 		auto n = static_cast<int>(height.size());
