@@ -1,4 +1,6 @@
-## How to Build
+# C++ Solutions
+
+### How to Build
 
 Open a terminal and navigate to the `cpp` directory.
 
@@ -8,7 +10,7 @@ cd build
 cmake .. && cmake --build .
 ```
 
-#### Disclaimer on C++ Memory Management
+### Disclaimer on C++ Memory Management
 
 Leetcode's tests often expect raw pointers to objects allocated on the heap when dealing with their internal implementation of linked lists.
 
