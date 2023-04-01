@@ -108,14 +108,14 @@ int main()
 	sort(actual.begin(), actual.end());
 	assert(actual == expected);
 
-	input = string { "2" };
+	input = "2";
 	expected = { "a", "b", "c" };
 	actual = Solution::letterCombinations(input);
 	sort(expected.begin(), expected.end());
 	sort(actual.begin(), actual.end());
 	assert(actual == expected);
 
-	input = string { "234" };
+	input = "234";
 	expected = {
 		"adg",
 		"adh",
