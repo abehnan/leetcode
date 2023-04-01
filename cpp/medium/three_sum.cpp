@@ -24,13 +24,13 @@ public:
 	// O(n^3)
 	static vector<vector<int>> threeSumBruteForce(const vector<int>& nums)
 	{
-		set<vector<int>> temp;
+		auto temp = set<vector<int>> {};
 
 		for (auto i = 0u; i < nums.size(); ++i) {
 			for (auto j = 0u; j < nums.size(); ++j) {
 				for (auto k = 0u; k < nums.size(); ++k) {
 					if (i != j && i != k && j != k && nums[i] + nums[j] + nums[k] == 0) {
-						vector<int> newEntry = { nums[i], nums[j], nums[k] };
+						auto newEntry = vector<int> { nums[i], nums[j], nums[k] };
 						sort(newEntry.begin(), newEntry.end());
 						temp.emplace(std::move(newEntry));
 					}
@@ -42,7 +42,7 @@ public:
 			return {};
 		}
 
-		vector<vector<int>> result;
+		auto result = vector<vector<int>> {};
 		result.reserve(temp.size());
 
 		for (const auto& entry : temp) {
@@ -56,7 +56,7 @@ public:
 	static vector<vector<int>> threeSum(vector<int>& nums)
 	{
 		sort(nums.begin(), nums.end());
-		vector<vector<int>> res;
+		auto res = vector<vector<int>> {};
 		auto n = nums.size();
 
 		for (auto i = 0u; i < n - 2; i++) {
@@ -98,9 +98,9 @@ public:
 
 int main()
 {
-	vector<vector<int>> expected;
-	vector<vector<int>> result;
-	vector<int> input;
+	auto expected = vector<vector<int>> {};
+	auto result = vector<vector<int>> {};
+	auto input = vector<int> {};
 
 	input = { 0, 1, 1 };
 	result = Solution::threeSumBruteForce(input);

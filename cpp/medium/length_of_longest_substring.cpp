@@ -12,7 +12,7 @@ public:
 	// O(n^2)
 	static int lengthOfLongestSubstringBruteForce(const std::string& s)
 	{
-		std::unordered_set<char> visited;
+		auto visited = std::unordered_set<char> {};
 		int result = 0;
 
 		for (const char* c = s.c_str(); *c != '\0'; c++) {

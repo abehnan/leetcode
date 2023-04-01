@@ -7,8 +7,8 @@
  */
 
 #include <cassert>
-#include <string>
 #include <stack>
+#include <string>
 
 class Solution {
 public:
@@ -18,7 +18,7 @@ public:
 			return true;
 		}
 
-		std::stack<char> stack;
+		auto stack = std::stack<char> {};
 
 		for (auto c : str) {
 			if (stack.empty()) {

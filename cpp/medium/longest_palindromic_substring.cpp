@@ -12,7 +12,7 @@ public:
 	static std::string longestPalindrome(const std::string& str)
 	{
 		auto n = str.length();
-		std::vector<std::vector<bool>> dp(n, std::vector<bool>(n, false));
+		auto dp = std::vector<std::vector<bool>>(n, std::vector<bool>(n, false));
 		auto maxLength = 1u;
 		auto start = 0u;
 

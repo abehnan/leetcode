@@ -16,8 +16,9 @@ public:
 	// O(n)
 	static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 	{
-		int carry = 0, sum;
-		ListNode *current = new ListNode(), *result = current;
+		int sum;
+		auto carry = 0;
+		auto *current = new ListNode(), *result = current;
 
 		while (l1 || l2 || carry) {
 			sum = carry;

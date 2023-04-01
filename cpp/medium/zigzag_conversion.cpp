@@ -25,11 +25,11 @@ public:
 			return s;
 		}
 
-		std::string result;
-		vector<int> newRow;
+		auto result = std::string {};
+		auto newRow = vector<int> {};
 		newRow.reserve(s.length());
-		int count = 1;
-		bool increasing = true;
+		auto count = 1;
+		auto increasing = true;
 		newRow.emplace_back(0);
 
 		for (auto i = 1u; i < s.length(); i++) {
@@ -64,12 +64,12 @@ public:
 			return s;
 		}
 
-		vector<string> rows(numRows);
-		int currRow = 0;
-		bool isGoingDown = false;
-		string result;
+		auto rows = vector<string>(numRows);
+		auto currRow = 0;
+		auto isGoingDown = false;
+		auto result = std::string {};
 
-		for (char const c : s) {
+		for (const auto& c : s) {
 			rows[currRow] += c;
 
 			if (currRow == 0 || currRow == numRows - 1) {
@@ -79,7 +79,7 @@ public:
 			currRow += isGoingDown ? 1 : -1;
 		}
 
-		for (const string& row : rows) {
+		for (const auto& row : rows) {
 			result += row;
 		}
 
