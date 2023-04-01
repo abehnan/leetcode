@@ -87,6 +87,7 @@ public:
 				if (++it == letters.end()) {
 					it = letters.begin();
 				}
+
 				index++;
 			}
 		}
