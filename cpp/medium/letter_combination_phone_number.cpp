@@ -29,6 +29,7 @@ using namespace std;
 
 class Solution {
 public:
+	// O(4^n) worst case because of "7" and "9", otherwise O(3^n) if the string does not contain either of these.
 	static vector<string> letterCombinations(const string& digits)
 	{
 		const auto map = unordered_map<char, vector<char>> {
