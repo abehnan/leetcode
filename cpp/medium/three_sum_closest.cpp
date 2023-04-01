@@ -10,6 +10,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <climits>
 #include <vector>
 
 using namespace std;
