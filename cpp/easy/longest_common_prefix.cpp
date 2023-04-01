@@ -38,7 +38,7 @@ public:
 
 int main()
 {
-	std::vector<std::string> test = { "blah", "bloh", "blih" };
+	auto test = std::vector<std::string> { "blah", "bloh", "blih" };
 	assert(Solution::longestCommonPrefix(test) == "bl");
 
 	test = { "blah", "bloh", "apple" };

@@ -4,8 +4,9 @@
  * Return the head of the merged linked list.
  */
 
-#include "../include/list_helper.h"
 #include <cassert>
+
+#include "../include/list_helper.h"
 
 using namespace ListHelper;
 
@@ -43,12 +44,12 @@ public:
 
 int main()
 {
-	ListNode* firstNumber = buildList(754);
-	int x = getNumber(firstNumber);
+	auto* firstNumber = buildList(754);
+	auto x = getNumber(firstNumber);
 	assert(x == 754);
 
-	ListNode* secondNumber = buildList(921);
-	int y = getNumber(secondNumber);
+	auto* secondNumber = buildList(921);
+	auto y = getNumber(secondNumber);
 	assert(y == 921);
 
 	auto list = Solution::mergeTwoLists(firstNumber, secondNumber);

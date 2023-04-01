@@ -26,7 +26,7 @@ public:
 				continue;
 			}
 
-			char top = stack.top();
+			auto top = stack.top();
 
 			switch (top) {
 				case '[':

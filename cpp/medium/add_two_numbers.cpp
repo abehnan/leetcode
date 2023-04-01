@@ -5,9 +5,10 @@
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
  */
 
-#include "../include/list_helper.h"
 #include <cassert>
 #include <vector>
+
+#include "../include/list_helper.h"
 
 using namespace ListHelper;
 
@@ -47,12 +48,12 @@ public:
 
 int main()
 {
-	ListNode* firstNumber = buildList(453);
-	int x = getNumber(firstNumber);
+	auto* firstNumber = buildList(453);
+	auto x = getNumber(firstNumber);
 	assert(x == 453);
 
-	ListNode* secondNumber = buildList(101);
-	int y = getNumber(secondNumber);
+	auto* secondNumber = buildList(101);
+	auto y = getNumber(secondNumber);
 	assert(y == 101);
 
 	assert(getNumber(Solution::addTwoNumbers(buildList(342), buildList(465))) == 807);
