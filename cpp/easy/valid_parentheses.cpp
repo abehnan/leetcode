@@ -10,40 +10,42 @@
 #include <stack>
 #include <string>
 
+using namespace std;
+
 class Solution {
 public:
-	static int validParentheses(const std::string& str)
+	static int validParentheses(const string& str)
 	{
 		if (str.empty()) {
 			return true;
 		}
 
-		auto stack = std::stack<char> {};
+		auto s = stack<char> {};
 
 		for (auto c : str) {
-			if (stack.empty()) {
-				stack.push(c);
+			if (s.empty()) {
+				s.push(c);
 				continue;
 			}
 
-			auto top = stack.top();
+			auto top = s.top();
 
 			switch (top) {
 				case '[':
 					if (c == ']') {
-						stack.pop();
+						s.pop();
 						continue;
 					}
 					break;
 				case '{':
 					if (c == '}') {
-						stack.pop();
+						s.pop();
 						continue;
 					}
 					break;
 				case '(':
 					if (c == ')') {
-						stack.pop();
+						s.pop();
 						continue;
 					}
 					break;
@@ -51,10 +53,10 @@ public:
 					break;
 			}
 
-			stack.push(c);
+			s.push(c);
 		}
 
-		return stack.empty();
+		return s.empty();
 	}
 };
 

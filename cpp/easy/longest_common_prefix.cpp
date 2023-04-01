@@ -3,15 +3,17 @@
  * If there is no common prefix, return an empty string "".
  */
 
+#include <algorithm>
 #include <cassert>
 #include <string>
 #include <vector>
-#include <algorithm>
+
+using namespace std;
 
 class Solution {
 public:
 	// O(n log n)
-	static std::string longestCommonPrefix(std::vector<std::string>& strings)
+	static string longestCommonPrefix(vector<string>& strings)
 	{
 		if (strings.empty()) {
 			return {};
@@ -23,9 +25,9 @@ public:
 
 		sort(strings.begin(), strings.end());
 
-		std::string result;
-		std::string first = strings.front();
-		std::string last = strings.back();
+		string result;
+		string first = strings.front();
+		string last = strings.back();
 		auto index = 0u;
 
 		while (index < first.size() && index < last.size() && first[index] == last[index]) {
@@ -38,7 +40,7 @@ public:
 
 int main()
 {
-	auto test = std::vector<std::string> { "blah", "bloh", "blih" };
+	auto test = vector<string> { "blah", "bloh", "blih" };
 	assert(Solution::longestCommonPrefix(test) == "bl");
 
 	test = { "blah", "bloh", "apple" };

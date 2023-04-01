@@ -25,12 +25,14 @@
 #include <string>
 #include <unordered_map>
 
+using namespace std;
+
 class Solution {
 public:
 	// O(n)
-	static unsigned int romanToInt(const std::string& str)
+	static unsigned int romanToInt(const string& str)
 	{
-		const std::unordered_map<char, int> romanToDecimal = {
+		const unordered_map<char, int> romanToDecimal = {
 			{ 'I', 1 },
 			{ 'V', 5 },
 			{ 'X', 10 },

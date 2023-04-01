@@ -6,17 +6,19 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Solution {
 public:
 	// dynamic programming approach, O(n^2)
-	static std::string longestPalindrome(const std::string& str)
+	static string longestPalindrome(const string& str)
 	{
 		auto n = str.length();
 		auto maxLength = 1u;
 		auto start = 0u;
 
 		// results[i][j] is true if str[i..j] is a palindrome
-		auto results = std::vector<std::vector<bool>>(n, std::vector<bool>(n, false));
+		auto results = vector<vector<bool>>(n, vector<bool>(n, false));
 
 		// All substrings of length 1 are palindromes
 		for (auto i = 0u; i < n; i++) {
@@ -52,7 +54,7 @@ public:
 	}
 
 	// O(n^3)
-	static std::string longestPalindromeBruteForce(const std::string& str)
+	static string longestPalindromeBruteForce(const string& str)
 	{
 		auto n = str.length();
 		auto maxLength = 1u;
@@ -73,7 +75,7 @@ public:
 		return str.substr(start, maxLength);
 	}
 
-	static bool isPalindrome(const std::string& str, unsigned int left, unsigned int right)
+	static bool isPalindrome(const string& str, unsigned int left, unsigned int right)
 	{
 		while (left < right) {
 			if (str[left] != str[right]) {

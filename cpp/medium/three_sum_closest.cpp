@@ -58,7 +58,7 @@ public:
 
 int main()
 {
-	auto nums = std::vector<int> { -1, 2, 1, -4 };
+	auto nums = vector<int> { -1, 2, 1, -4 };
 	auto target = 1;
 	auto expected = 2;
 	auto result = Solution::threeSumClosest(nums, target);

@@ -19,20 +19,20 @@ using namespace std;
 class Solution {
 public:
 	// brute force solution - O(stringLength * numRows)
-	static string convertBruteForce(string s, int numRows)
+	static string convertBruteForce(const string& str, int numRows)
 	{
-		if (numRows <= 1 || s.empty()) {
-			return s;
+		if (numRows <= 1 || str.empty()) {
+			return str;
 		}
 
-		auto result = std::string {};
+		auto result = string {};
 		auto newRow = vector<int> {};
-		newRow.reserve(s.length());
+		newRow.reserve(str.length());
 		auto count = 1;
 		auto increasing = true;
 		newRow.emplace_back(0);
 
-		for (auto i = 1u; i < s.length(); i++) {
+		for (auto i = 1u; i < str.length(); i++) {
 			if (count < numRows - 1 && increasing) {
 				newRow.emplace_back(count++);
 			} else if (count >= numRows - 1 && increasing) {
@@ -49,7 +49,7 @@ public:
 		for (auto j = 0; j < numRows; j++) {
 			for (auto i = 0u; i < newRow.size(); i++) {
 				if (newRow[i] == j) {
-					result += s[i];
+					result += str[i];
 				}
 			}
 		}
@@ -58,18 +58,18 @@ public:
 	}
 
 	// O(stringLength) with the trade-off of higher space complexity
-	static string convert(string s, int numRows)
+	static string convert(const string& str, int numRows)
 	{
 		if (numRows == 1) {
-			return s;
+			return str;
 		}
 
 		auto rows = vector<string>(numRows);
 		auto currRow = 0;
 		auto isGoingDown = false;
-		auto result = std::string {};
+		auto result = string {};
 
-		for (const auto& c : s) {
+		for (const auto& c : str) {
 			rows[currRow] += c;
 
 			if (currRow == 0 || currRow == numRows - 1) {
