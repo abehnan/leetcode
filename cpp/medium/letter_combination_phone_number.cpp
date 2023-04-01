@@ -32,4 +32,5 @@ public:
 int main()
 {
 	assert(Solution::letterCombinations("").empty());
+	return 0;
 }
