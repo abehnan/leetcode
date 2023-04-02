@@ -18,3 +18,4 @@ add_executable(letter_combination_phone_number medium/letter_combination_phone_n
 add_executable(buy_stock easy/buy_stock.cpp)
 add_executable(contains_duplicate easy/contains_duplicate.cpp)
 add_executable(product_of_array_except_self medium/product_of_array_except_self.cpp)
+add_executable(maximum_subarray medium/maximum_subarray.cpp)
