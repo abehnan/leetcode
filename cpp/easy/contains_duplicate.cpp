@@ -14,6 +14,7 @@ using namespace std;
 
 class Solution {
 public:
+	// O(n log n)
 	static bool containsDuplicateNoExtraSpace(vector<int>& nums)
 	{
 		if (nums.size() <= 1) {
@@ -34,6 +35,7 @@ public:
 		return false;
 	}
 
+	// O(n)
 	static bool containsDuplicate(const vector<int>& nums)
 	{
 		auto s = set<int>(nums.begin(), nums.end());
