@@ -18,32 +18,18 @@ class Solution {
 public:
 	static vector<int> productExceptSelf(vector<int>& nums)
 	{
-		auto prod = 1, numZeroes = 0;
-		auto n = nums.size();
-		vector<int> ans(n, 0);
+		auto n = static_cast<int>(nums.size());
+		auto forwardProduct = 1;
 
-		for (auto x : nums) {
-			if (!x) {
-				numZeroes++;
-			} else {
-				prod *= x;
-			}
+		vector<int> ans(n, 1);
+
+		for (auto i = n - 2; i >= 0; i--) {
+			ans[i] = ans[i + 1] * nums[i + 1];
 		}
 
-		if (numZeroes > 1) {
-			return ans;
-		}
-
-		for (auto i = 0u; i < n; i++) {
-			if (numZeroes) {
-				if (!nums[i]) {
-					ans[i] = prod;
-				} else {
-					ans[i] = 0;
-				}
-			} else {
-				ans[i] = prod / nums[i];
-			}
+		for (auto i = 0; i < n; i++) {
+			ans[i] *= forwardProduct;
+			forwardProduct *= nums[i];
 		}
 
 		return ans;
