@@ -20,7 +20,6 @@ public:
 	{
 		auto n = static_cast<int>(nums.size());
 		auto forwardProduct = 1;
-
 		vector<int> ans(n, 1);
 
 		for (auto i = n - 2; i >= 0; i--) {
