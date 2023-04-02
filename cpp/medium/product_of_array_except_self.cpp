@@ -20,7 +20,7 @@ public:
 	{
 		auto n = static_cast<int>(nums.size());
 		auto forwardProduct = 1;
-		vector<int> ans(n, 1);
+		auto ans = vector<int>(n, 1);
 
 		for (auto i = n - 2; i >= 0; i--) {
 			ans[i] = ans[i + 1] * nums[i + 1];
@@ -37,7 +37,7 @@ public:
 	static vector<int> productExceptSelfTheHardWay(vector<int>& nums)
 	{
 		auto numZeroes = 0;
-		std::vector<int> result;
+		auto result = std::vector<int> {};
 
 		std::for_each(nums.begin(), nums.end(), [&numZeroes](int num) -> void {
 			if (num == 0) {
@@ -98,7 +98,7 @@ public:
 		auto quotient = 0;
 		auto remainder = 0u;
 
-		for (int i = 31; i >= 0; i--) {
+		for (auto i = 31; i >= 0; i--) {
 			remainder <<= 1; // Shift remainder to the left by 1 bit
 			auto bit = (dividend & (1 << i)) ? 1 : 0; // Get current bit of dividend
 			remainder |= bit; // Add current bit to remainder
