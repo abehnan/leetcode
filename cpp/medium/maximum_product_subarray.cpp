@@ -22,7 +22,7 @@ public:
 		auto currentMin = nums[0];
 		auto result = currentMax;
 
-		for (int i = 1; i < n; i++) {
+		for (auto i = 1; i < n; i++) {
 			auto current = nums[i];
 			auto tempMax = max(current, max(currentMax * current, currentMin * current));
 			currentMin = min(current, min(currentMax * current, currentMin * current));
