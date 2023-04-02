@@ -15,15 +15,15 @@ class Solution {
 public:
 	static int maxSubArray(const std::vector<int>& nums)
 	{
-		auto current_sum = nums[0];
-		auto max_sum = nums[0];
+		auto currentSum = nums[0];
+		auto maxSum = nums[0];
 
 		for (auto i = 1u; i < nums.size(); ++i) {
-			current_sum = max(nums[i], current_sum + nums[i]);
-			max_sum = max(max_sum, current_sum);
+			currentSum = max(nums[i], currentSum + nums[i]);
+			maxSum = max(maxSum, currentSum);
 		}
 
-		return max_sum;
+		return maxSum;
 	}
 };
 
