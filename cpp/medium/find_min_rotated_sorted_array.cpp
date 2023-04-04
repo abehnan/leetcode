@@ -26,7 +26,7 @@ using namespace std;
 class Solution {
 public:
 	// O(log n)
-	static int findMin(vector<int>& nums)
+	static int findMin(const vector<int>& nums)
 	{
 		if (nums.size() == 1) {
 			return nums[0];
@@ -35,7 +35,7 @@ public:
 		return findMinInternal(nums, 0, nums.size() - 1);
 	}
 
-	static int findMinInternal(vector<int>& nums, unsigned int l, unsigned int r)
+	static int findMinInternal(const vector<int>& nums, unsigned int l, unsigned int r)
 	{
 		if (l == r) {
 			return nums[l];
