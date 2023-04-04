@@ -21,3 +21,4 @@ add_executable(product_of_array_except_self medium/product_of_array_except_self.
 add_executable(maximum_subarray medium/maximum_subarray.cpp)
 add_executable(maximum_product_subarray medium/maximum_product_subarray.cpp)
 add_executable(find_min_rotated_sorted_array medium/find_min_rotated_sorted_array.cpp)
+add_executable(search_rotated_sorted_array medium/search_rotated_sorted_array.cpp)
