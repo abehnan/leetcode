@@ -12,6 +12,7 @@ using namespace std;
 
 class Solution {
 public:
+	// O(n)
 	static vector<int> countBits(uint32_t n)
 	{
 		auto result = vector<int> {};
