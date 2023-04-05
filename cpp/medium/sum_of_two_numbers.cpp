@@ -11,9 +11,14 @@ using namespace std;
 
 class Solution {
 public:
-	static int getSum(int /*a*/, int /*b*/)
+	static int getSum(int a, int b)
 	{
-		return 0;
+		while (b != 0) {
+			unsigned carry = a & b;
+			a ^= b;
+			b = static_cast<int>(carry << 1);
+		}
+		return a;
 	}
 };
 
@@ -22,5 +27,26 @@ int main()
 	auto expected = 0;
 	auto actual = Solution::getSum(0, 0);
 	assert(actual == expected);
+
+	expected = 5;
+	actual = Solution::getSum(2, 3);
+	assert(actual == expected);
+
+	expected = 10;
+	actual = Solution::getSum(4, 6);
+	assert(actual == expected);
+
+	expected = 4;
+	actual = Solution::getSum(-2, 6);
+	assert(actual == expected);
+
+	expected = -6;
+	actual = Solution::getSum(-2, -4);
+	assert(actual == expected);
+
+	expected = 0;
+	actual = Solution::getSum(-1, 1);
+	assert(actual == expected);
+
 	return 0;
 }
