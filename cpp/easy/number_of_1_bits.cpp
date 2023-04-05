@@ -15,16 +15,7 @@ public:
 	// Note: could have also just done n & 1, then shifted right to count
 	static int hammingWeight(uint32_t n)
 	{
-		auto bits = bitset<32>(n);
-		auto count = 0;
-
-		for (auto i = 0; i < 32; i++) {
-			if (bits.test(i)) {
-				count++;
-			}
-		}
-
-		return count;
+		return static_cast<int>(bitset<32>(n).count());
 	}
 };
 
