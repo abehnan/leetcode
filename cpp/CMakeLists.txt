@@ -25,3 +25,4 @@ add_executable(search_rotated_sorted_array medium/search_rotated_sorted_array.cp
 add_executable(sum_of_two_numbers medium/sum_of_two_numbers.cpp)
 add_executable(number_of_1_bits easy/number_of_1_bits.cpp)
 add_executable(counting_bits easy/counting_bits.cpp)
+add_executable(missing_number easy/missing_number.cpp)
