@@ -1,9 +1,10 @@
 /**
- * Write a function that takes the binary representation of an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).
+ * Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
  * Constraints:
- * 		The input must be a binary string of length 32.
+ * 		0 <= n <= 105
  */
 
+#include <bitset>
 #include <cassert>
 #include <vector>
 
@@ -11,9 +12,15 @@ using namespace std;
 
 class Solution {
 public:
-	static vector<int> countBits(int /*n*/)
+	static vector<int> countBits(uint32_t n)
 	{
-		return {};
+		auto result = vector<int> {};
+
+		for (uint32_t i = 0; i <= n; i++) {
+			result.emplace_back(bitset<32>(i).count());
+		}
+
+		return result;
 	}
 };
 
@@ -22,6 +29,5 @@ int main()
 	auto expected = std::vector<int> { 0, 1, 1 };
 	auto actual = Solution::countBits(2);
 	assert(actual == expected);
-
 	return 0;
 }
