@@ -11,6 +11,7 @@ using namespace std;
 
 class Solution {
 public:
+	// O(1)
 	static int getSum(int a, int b)
 	{
 		while (b != 0) {
