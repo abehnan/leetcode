@@ -23,9 +23,38 @@ using namespace std;
 
 class Solution {
 public:
-	static int search(vector<int>& /*nums*/, int /*target*/)
+	// O(log n)
+	static int search(const vector<int>& nums, int target)
 	{
-		return -1;
+		auto n = static_cast<int>(nums.size());
+		return searchInternal(nums, 0, n - 1, target);
+	}
+
+	static int searchInternal(const vector<int>& nums, int l, int r, int target)
+	{
+		if (l == r) {
+			return nums[l] == target ? l : -1;
+		}
+
+		if (l + 1 == r) {
+			if (nums[l] == target) {
+				return l;
+			} else if (nums[r] == target) {
+				return r;
+			} else {
+				return -1;
+			}
+		}
+
+		auto m = l + (r - l) / 2;
+		auto result = searchInternal(nums, l, m, target);
+
+		if (result != -1) {
+			return result;
+		}
+
+		result = searchInternal(nums, m + 1, r, target);
+		return result;
 	}
 };
 
@@ -33,8 +62,20 @@ int main()
 {
 	auto expected = -1;
 	auto nums = vector<int> { 1 };
-	auto target = 5;
+	auto target = 0;
 	auto actual = Solution::search(nums, target);
+	assert(actual == expected);
+
+	expected = 4;
+	nums = { 4, 5, 6, 7, 0, 1, 2 };
+	target = 0;
+	actual = Solution::search(nums, target);
+	assert(actual == expected);
+
+	expected = -1;
+	nums = { 4, 5, 6, 7, 0, 1, 2 };
+	target = 3;
+	actual = Solution::search(nums, target);
 	assert(actual == expected);
 
 	return 0;
