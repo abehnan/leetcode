@@ -18,6 +18,7 @@ public:
 			a ^= b;
 			b = static_cast<int>(carry << 1);
 		}
+
 		return a;
 	}
 };
