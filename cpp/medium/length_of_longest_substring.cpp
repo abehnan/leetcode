@@ -15,7 +15,7 @@ public:
 	static int lengthOfLongestSubstringBruteForce(const string& str)
 	{
 		auto visited = unordered_set<char> {};
-		int result = 0;
+		auto result = 0;
 
 		for (const char* c = str.c_str(); *c != '\0'; c++) {
 			visited.clear();
@@ -38,8 +38,8 @@ public:
 	// Note: Using a sliding window to solve this in O(n)
 	static int lengthOfLongestSubstring(const string& str)
 	{
-		unordered_set<char> seen;
-		int left = 0, right = 0, n = static_cast<int>(str.size()), ans = 0;
+		auto seen = unordered_set<char> {};
+		auto left = 0, right = 0, n = static_cast<int>(str.size()), ans = 0;
 
 		while (left < n && right < n) {
 			if (seen.find(str[right]) == seen.end()) {
