@@ -30,5 +30,10 @@ int main()
 	auto expected = std::vector<int> { 0, 1, 1 };
 	auto actual = Solution::countBits(2);
 	assert(actual == expected);
+
+	expected = { 0, 1, 1, 2, 1, 2 };
+	actual = Solution::countBits(5);
+	assert(actual == expected);
+
 	return 0;
 }
