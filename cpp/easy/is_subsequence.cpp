@@ -14,17 +14,40 @@ using namespace std;
 
 class Solution {
 public:
-	static bool isSubsequence(const string& /*s*/, const string& /*t*/)
+	static bool isSubsequence(const string& s, const string& t)
 	{
+		auto pos = 0ull;
+
+		for (const auto& c : s) {
+			auto newPos = t.find(c, pos);
+
+			if (newPos == string::npos) {
+				return false;
+			}
+
+			pos = newPos + 1;
+		}
+
 		return true;
 	}
 };
+
 int main()
 {
 	auto s = string { "abc" };
 	auto t = string { "ahbgdc" };
 	auto actual = Solution::isSubsequence(s, t);
 	assert(actual);
+
+	s = "axc";
+	t = "ahbgdc";
+	actual = Solution::isSubsequence(s, t);
+	assert(!actual);
+
+	s = "aaaaaa";
+	t = "bbaaaa";
+	actual = Solution::isSubsequence(s, t);
+	assert(!actual);
 
 	return 0;
 }
