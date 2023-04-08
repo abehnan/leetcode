@@ -37,15 +37,15 @@ int main()
 	auto actual = Solution::generate(1);
 	assert(actual == expected);
 
-	expected = vector<vector<int>> { { 1 }, { 1, 1 } };
+	expected = { { 1 }, { 1, 1 } };
 	actual = Solution::generate(2);
 	assert(actual == expected);
 
-	expected = vector<vector<int>> { { 1 }, { 1, 1 }, { 1, 2, 1 } };
+	expected = { { 1 }, { 1, 1 }, { 1, 2, 1 } };
 	actual = Solution::generate(3);
 	assert(actual == expected);
 
-	expected = vector<vector<int>> { { 1 }, { 1, 1 }, { 1, 2, 1 }, { 1, 3, 3, 1 } };
+	expected = { { 1 }, { 1, 1 }, { 1, 2, 1 }, { 1, 3, 3, 1 } };
 	actual = Solution::generate(4);
 	assert(actual == expected);
 
