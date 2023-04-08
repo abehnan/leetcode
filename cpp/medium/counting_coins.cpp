@@ -17,7 +17,7 @@ using namespace std;
 class Solution {
 public:
 	// O(coins.size() * amount)
-	static int coinChange(vector<int>& coins, int amount)
+	static int coinChange(const vector<int>& coins, int amount)
 	{
 		// dp[i] represents the minimum amount of coins required to each amount i
 		auto dp = vector<int>(amount + 1, amount + 1);
@@ -26,7 +26,7 @@ public:
 		for (const auto& coin : coins) {
 			for (auto j = coin; j <= amount; j++) {
 				/**
-				 * We already know much how many coins it takes to to get to "j - coin" at this point.
+				 * We already know how many coins it takes to to get to "j - coin" at this point.
 				 * Therefore, adding 1 of the current coin would net us the amount of coins required to get to "j".
 				 */
 				dp[j] = min(dp[j], dp[j - coin] + 1);
