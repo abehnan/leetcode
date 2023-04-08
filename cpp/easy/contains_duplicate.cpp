@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <climits>
 #include <set>
 #include <vector>
 
