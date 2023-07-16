@@ -42,7 +42,7 @@ public:
 	// O(n) time and O(n) space, but easier.
 	static int trap(const vector<int>& height)
 	{
-		auto n = height.size();
+		auto n = static_cast<int>(height.size());
 
 		if (n < 3) {
 			return 0;
@@ -54,23 +54,23 @@ public:
 		auto minBoundary = vector<int>(n, 0);
 		auto currentMax = height[0];
 
-		for (auto i = 1u; i < n; i++) {
+		for (auto i = 1; i < n; i++) {
 			currentMax = max(height[i - 1], currentMax);
 			maxLeft[i] = currentMax;
 		}
 
 		currentMax = height[n - 1];
 
-		for (auto i = static_cast<int>(n - 2); i >= 0; i--) {
+		for (auto i = n - 2; i >= 0; i--) {
 			currentMax = max(height[i + 1], currentMax);
 			maxRight[i] = currentMax;
 		}
 
-		for (auto i = 0u; i < n; i++) {
+		for (auto i = 0; i < n; i++) {
 			minBoundary[i] = min(maxLeft[i], maxRight[i]);
 		}
 
-		for (auto i = 0u; i < n; i++) {
+		for (auto i = 0; i < n; i++) {
 			result += max(minBoundary[i] - height[i], 0);
 		}
 
