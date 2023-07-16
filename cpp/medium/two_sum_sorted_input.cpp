@@ -20,8 +20,25 @@ using namespace std;
 
 class Solution {
 public:
-	static vector<int> twoSum(vector<int>& /*numbers*/, int /*target*/)
+	static vector<int> twoSum(vector<int>& numbers, int target)
 	{
+		auto i = 0;
+		auto j = static_cast<int>(numbers.size() - 1);
+
+		while (i < j) {
+			auto val = numbers[i] + numbers[j];
+
+			if (val == target) {
+				return { i + 1, j + 1 };
+			}
+
+			if (val < target) {
+				i++;
+			} else {
+				j--;
+			}
+		}
+
 		return {};
 	}
 };
