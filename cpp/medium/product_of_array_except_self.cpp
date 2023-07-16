@@ -22,10 +22,12 @@ public:
 		auto forwardProduct = 1;
 		auto ans = vector<int>(n, 1);
 
+		// calculate the suffix product, store it into ans
 		for (auto i = n - 2; i >= 0; i--) {
 			ans[i] = ans[i + 1] * nums[i + 1];
 		}
 
+		// multiply the suffix product with the forward product (prefix product)
 		for (auto i = 0; i < n; i++) {
 			ans[i] *= forwardProduct;
 			forwardProduct *= nums[i];
