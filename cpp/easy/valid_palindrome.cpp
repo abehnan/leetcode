@@ -15,14 +15,41 @@ using namespace std;
 
 class Solution {
 public:
-	static bool isPalindrome(const string& /*s*/)
+	static bool isPalindrome(const string& s)
 	{
-		return false;
+		auto newString = string {};
+
+		for (const char& c : s) {
+			if (isalnum(c)) {
+				newString += isupper(c) ? static_cast<char>(tolower(c)) : c;
+			}
+		}
+
+		if (newString.empty()) {
+			return true;
+		}
+
+		auto i = 0u;
+		auto j = newString.length() - 1;
+
+		while (i < j) {
+			if (newString.at(i) != newString.at(j)) {
+				return false;
+			}
+
+			i++;
+			j--;
+		}
+
+		return true;
 	}
 };
 
 int main()
 {
 	assert(!Solution::isPalindrome("palindrome"));
+	assert(!Solution::isPalindrome("race a car"));
+	assert(Solution::isPalindrome("A man, a plan, a canal: Panama"));
+	assert(Solution::isPalindrome(" "));
 	return 0;
 }
