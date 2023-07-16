@@ -20,7 +20,7 @@ using namespace std;
 
 class Solution {
 public:
-	static vector<int> twoSum(vector<int>& numbers, int target)
+	static vector<int> twoSum(const vector<int>& numbers, int target)
 	{
 		auto i = 0;
 		auto j = static_cast<int>(numbers.size() - 1);
