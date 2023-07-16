@@ -8,15 +8,34 @@
  */
 
 #include <cassert>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
 
 class Solution {
 public:
-	static int longestConsecutive(vector<int>& /*nums*/)
+	static int longestConsecutive(const vector<int>& nums)
 	{
-		return 0;
+		auto s = unordered_set<int>(nums.begin(), nums.end());
+		auto longest = 0;
+
+		for (const auto& n : s) {
+			// return early if this isn't the start of a sequence
+			if (s.count(n - 1)) {
+				continue;
+			}
+
+			auto length = 1;
+
+			while (s.count(n + length)) {
+				length++;
+			}
+
+			longest = max(longest, length);
+		}
+
+		return longest;
 	}
 };
 
@@ -24,5 +43,11 @@ int main()
 {
 	auto input = vector<int> {};
 	assert(Solution::longestConsecutive(input) == 0);
+
+	input = { 100, 4, 200, 1, 3, 2 };
+	assert(Solution::longestConsecutive(input) == 4);
+
+	input = { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
+	assert(Solution::longestConsecutive(input) == 9);
 	return 0;
 }
