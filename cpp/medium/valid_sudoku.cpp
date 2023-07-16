@@ -117,8 +117,9 @@ public:
 		for (auto n = a; n < a + 3; n++) {
 			for (auto m = b; m < b + 3; m++) {
 				if (n != i || m != j) {
-					if (board[n][m] == val)
+					if (board[n][m] == val) {
 						return false;
+					}
 				}
 			}
 		}
