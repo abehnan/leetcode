@@ -41,3 +41,4 @@ add_executable(longest_consecutive_sequence medium/longest_consecutive_sequence.
 add_executable(valid_palindrome easy/valid_palindrome.cpp)
 add_executable(two_sum_sorted_input medium/two_sum_sorted_input.cpp)
 add_executable(trapping_rain_water hard/trapping_rain_water.cpp)
+add_executable(longest_repeating_char_replacement medium/longest_repeating_char_replacement.cpp)
