@@ -22,7 +22,7 @@ public:
 
 		auto s = stack<char> {};
 
-		for (auto c : str) {
+		for (const auto& c : str) {
 			if (s.empty()) {
 				s.push(c);
 				continue;
