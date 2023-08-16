@@ -6,6 +6,7 @@
 
 #include <bitset>
 #include <cassert>
+#include <cstdint>
 #include <vector>
 
 using namespace std;

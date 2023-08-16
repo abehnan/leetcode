@@ -1,0 +1,2 @@
+Checks: 'clang-analyzer-*,cppcoreguidelines-*,misc-*,modernize-*,-modernize-use-nodiscard,-modernize-use-trailing-return-type,performance-*,readability-*'
+FormatStyle: file
