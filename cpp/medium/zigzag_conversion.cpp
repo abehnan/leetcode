@@ -32,7 +32,7 @@ public:
 		auto increasing = true;
 		newRow.emplace_back(0);
 
-		for (auto i = 1u; i < str.length(); i++) {
+		for (auto i = 1U; i < str.length(); i++) {
 			if (count < numRows - 1 && increasing) {
 				newRow.emplace_back(count++);
 			} else if (count >= numRows - 1 && increasing) {
@@ -47,11 +47,10 @@ public:
 		}
 
 		for (auto j = 0; j < numRows; j++) {
-			for (auto i = 0u; i < newRow.size(); i++) {
+			for (auto i = 0u; i < newRow.size(); i++)
 				if (newRow[i] == j) {
 					result += str[i];
 				}
-			}
 		}
 
 		return result;

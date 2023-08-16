@@ -44,9 +44,9 @@ public:
 		};
 
 		const auto multiplierForIndex = [&digits, &map](const unsigned int index) -> unsigned int {
-			auto multiplier = 1u;
+			auto multiplier = 1U;
 
-			for (auto i = 0u; i < digits.size(); i++) {
+			for (auto i = 0U; i < digits.size(); i++) {
 				if (i == index) {
 					continue;
 				}
@@ -63,25 +63,25 @@ public:
 			const auto multiplier = multiplierForIndex(0);
 
 			for (const auto& c : map.at(digits[0])) {
-				for (auto i = 0u; i < multiplier; i++) {
+				for (auto i = 0U; i < multiplier; i++) {
 					results.emplace_back(1, c);
 				}
 			}
 		}
 
 		if (digits.size() > 1) {
-			auto index = 0u;
+			auto index = 0U;
 			const auto multiplier = multiplierForIndex(1);
 
-			for (auto i = 0u; i < multiplier; i++) {
+			for (auto i = 0U; i < multiplier; i++) {
 				for (const auto& c : map.at(digits[1])) {
 					results[index++] += c;
 				}
 			}
 		}
 
-		for (auto i = 2u; i < digits.size(); i++) {
-			auto index = 0u;
+		for (auto i = 2U; i < digits.size(); i++) {
+			auto index = 0U;
 			const auto& letters = map.at(digits[i]);
 			auto it = letters.begin();
 			sort(results.begin(), results.end());

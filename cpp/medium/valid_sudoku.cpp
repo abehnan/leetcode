@@ -38,13 +38,13 @@ class Solution {
 public:
 	static bool checkRowAndColumn(const vector<vector<char>>& board, unsigned int row, unsigned int column)
 	{
-		auto& val = board[row][column];
+		const auto& val = board[row][column];
 
 		if (val == '.') {
 			return true;
 		}
 
-		for (auto x = 0u; x < 9u; x++) {
+		for (auto x = 0U; x < 9U; x++) {
 			if (x != row && board[x][column] == val) {
 				return false;
 			}
@@ -63,13 +63,13 @@ public:
 			auto nums = unordered_set<char> { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 			for (const auto& location : section) {
-				auto& val = board[location.first][location.second];
+				const auto& val = board[location.first][location.second];
 
 				if (val == '.') {
 					continue;
 				}
 
-				if (!nums.count(val)) {
+				if (nums.count(val) == 0U) {
 					return false;
 				}
 
@@ -82,8 +82,8 @@ public:
 
 	static bool isValidSudoku(const vector<vector<char>>& board)
 	{
-		for (auto i = 0u; i < 9u; i++) {
-			for (auto j = 0u; j < 9u; j++) {
+		for (auto i = 0U; i < 9U; i++) {
+			for (auto j = 0U; j < 9U; j++) {
 				if (!checkRowAndColumn(board, i, j)) {
 					return false;
 				}
@@ -99,7 +99,7 @@ public:
 			return true;
 		}
 
-		for (auto x = 0u; x < 9u; x++) {
+		for (auto x = 0U; x < 9U; x++) {
 			if (x != i && board[x][j] == val) {
 				return false;
 			}
@@ -129,8 +129,8 @@ public:
 
 	static bool isValidSudokuOptimized(const vector<vector<char>>& board)
 	{
-		for (auto i = 0u; i < 9u; i++) {
-			for (auto j = 0u; j < 9u; j++) {
+		for (auto i = 0U; i < 9U; i++) {
+			for (auto j = 0U; j < 9U; j++) {
 				if (!check(board, i, j, board[i][j])) {
 					return false;
 				}

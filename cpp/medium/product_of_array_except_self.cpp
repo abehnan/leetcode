@@ -62,12 +62,15 @@ public:
 				[&product](int num) -> int {
 					if (num != 0) {
 						return 0;
-					} else {
-						return product;
 					}
+
+					return product;
+
 				});
 			return result;
-		} else if (numZeroes > 1) {
+		}
+
+		if (numZeroes > 1) {
 			result.insert(result.begin(), nums.size(), 0);
 			return result;
 		}
@@ -98,11 +101,11 @@ public:
 		dividend = abs(dividend);
 		divisor = abs(divisor);
 		auto quotient = 0;
-		auto remainder = 0u;
+		auto remainder = 0U;
 
 		for (auto i = 31; i >= 0; i--) {
 			remainder <<= 1; // Shift remainder to the left by 1 bit
-			auto bit = (dividend & (1 << i)) ? 1 : 0; // Get current bit of dividend
+			auto bit = (dividend & (1 << i)) != 0 ? 1 : 0; // Get current bit of dividend
 			remainder |= bit; // Add current bit to remainder
 
 			if (remainder >= static_cast<unsigned int>(divisor)) {

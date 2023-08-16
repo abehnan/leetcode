@@ -26,9 +26,9 @@ public:
 	{
 		auto temp = set<vector<int>> {};
 
-		for (auto i = 0u; i < nums.size(); ++i) {
-			for (auto j = 0u; j < nums.size(); ++j) {
-				for (auto k = 0u; k < nums.size(); ++k) {
+		for (auto i = 0U; i < nums.size(); ++i) {
+			for (auto j = 0U; j < nums.size(); ++j) {
+				for (auto k = 0U; k < nums.size(); ++k) {
 					if (i != j && i != k && j != k && nums[i] + nums[j] + nums[k] == 0) {
 						auto newEntry = vector<int> { nums[i], nums[j], nums[k] };
 						sort(newEntry.begin(), newEntry.end());
@@ -59,8 +59,8 @@ public:
 		auto res = vector<vector<int>> {};
 		auto n = nums.size();
 
-		for (auto i = 0u; i < n - 2; i++) {
-			if (i != 0u && nums[i] == nums[i - 1]) {
+		for (auto i = 0U; i < n - 2; i++) {
+			if (i != 0U && nums[i] == nums[i - 1]) {
 				continue; // skip duplicates
 			}
 
@@ -72,7 +72,9 @@ public:
 				if (nums[l] + nums[r] < sum) {
 					l++;
 					continue;
-				} else if (nums[l] + nums[r] > sum) {
+				}
+
+				if (nums[l] + nums[r] > sum) {
 					r--;
 					continue;
 				}

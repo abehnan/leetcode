@@ -15,7 +15,7 @@ public:
 	static int getSum(int a, int b)
 	{
 		while (b != 0) {
-			unsigned carry = a & b;
+			const unsigned carry = a & b;
 			a ^= b;
 			b = static_cast<int>(carry << 1);
 		}

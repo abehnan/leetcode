@@ -17,19 +17,20 @@ public:
 	// O(n)
 	static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 	{
-		int sum;
+		int sum = 0;
 		auto carry = 0;
-		auto *current = new ListNode(), *result = current;
+		auto *current = new ListNode();
+		auto *result = current;
 
-		while (l1 || l2 || carry) {
+		while ((l1 != nullptr) || (l2 != nullptr) || (carry != 0)) {
 			sum = carry;
 
-			if (l1) {
+			if (l1 != nullptr) {
 				sum += l1->val;
 				l1 = l1->next;
 			}
 
-			if (l2) {
+			if (l2 != nullptr) {
 				sum += l2->val;
 				l2 = l2->next;
 			}

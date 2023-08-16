@@ -21,14 +21,17 @@ public:
 	static int threeSumClosest(vector<int>& nums, int target)
 	{
 		sort(nums.begin(), nums.end());
-		auto n = static_cast<int>(nums.size()), result = 0, minDiff = INT_MAX;
+		auto n = static_cast<int>(nums.size());
+		auto result = 0;
+		auto minDiff = INT_MAX;
 
 		for (auto i = 0; i < n - 2; i++) {
 			if (i != 0 && nums[i] == nums[i - 1]) {
 				continue; // skip duplicates
 			}
 
-			auto l = i + 1, r = n - 1;
+			auto l = i + 1;
+			auto r = n - 1;
 			auto remainder = target - nums[i];
 
 			while (l < r) {

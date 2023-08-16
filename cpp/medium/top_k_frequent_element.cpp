@@ -32,8 +32,8 @@ public:
 
 		auto results = map<int, int> {};
 
-		for (const auto& [k, v] : occurrences) {
-			results[v] = k;
+		for (const auto& [key, val] : occurrences) {
+			results[val] = key;
 		}
 
 		auto result = vector<int> {};
@@ -60,8 +60,8 @@ public:
 
 		auto results = vector<pair<int, int>> {};
 
-		for (const auto& [k, v] : occurrences) {
-			results.emplace_back(v, k);
+		for (const auto& [key, val] : occurrences) {
+			results.emplace_back(val, key);
 		}
 
 		sort(results.begin(), results.end());

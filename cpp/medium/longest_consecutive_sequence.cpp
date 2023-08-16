@@ -28,7 +28,7 @@ public:
 
 			auto length = 1;
 
-			while (s.count(n + length)) {
+			while (s.count(n + length) != 0U) {
 				length++;
 			}
 
