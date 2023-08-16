@@ -18,7 +18,7 @@ public:
 	// O(n) with no extra space.
 	static int trapOptimized(const vector<int>& height)
 	{
-		auto l = 0u;
+		auto l = 0U;
 		auto r = height.size() - 1;
 		auto maxLeft = height[l];
 		auto maxRight = height[r];

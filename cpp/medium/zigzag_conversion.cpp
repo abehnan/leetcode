@@ -47,10 +47,11 @@ public:
 		}
 
 		for (auto j = 0; j < numRows; j++) {
-			for (auto i = 0u; i < newRow.size(); i++)
+			for (auto i = 0U; i < newRow.size(); i++) {
 				if (newRow[i] == j) {
 					result += str[i];
 				}
+			}
 		}
 
 		return result;

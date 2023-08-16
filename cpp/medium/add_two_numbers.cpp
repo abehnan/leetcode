@@ -22,7 +22,7 @@ public:
 		auto *current = new ListNode();
 		auto *result = current;
 
-		while ((l1 != nullptr) || (l2 != nullptr) || (carry != 0)) {
+		while (l1 != nullptr || l2 != nullptr || carry != 0) {
 			sum = carry;
 
 			if (l1 != nullptr) {
