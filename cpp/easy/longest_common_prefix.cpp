@@ -28,7 +28,7 @@ public:
 		string result;
 		string first = strings.front();
 		string last = strings.back();
-		auto index = 0u;
+		auto index = 0U;
 
 		while (index < first.size() && index < last.size() && first[index] == last[index]) {
 			result.push_back(first[index++]);

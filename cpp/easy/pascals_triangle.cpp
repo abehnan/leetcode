@@ -22,7 +22,7 @@ public:
 		}
 
 		for (auto i = 2; i < numRows; i++) {
-			for (auto j = 1u; j < pascalsTriangle[i].size() - 1; j++) {
+			for (auto j = 1U; j < pascalsTriangle[i].size() - 1; j++) {
 				pascalsTriangle[i][j] = pascalsTriangle[i - 1][j - 1] + pascalsTriangle[i - 1][j];
 			}
 		}

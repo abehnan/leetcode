@@ -17,7 +17,7 @@ public:
 	static int validParentheses(const string& str)
 	{
 		if (str.empty()) {
-			return true;
+			return 1;
 		}
 
 		auto s = stack<char> {};
@@ -56,7 +56,7 @@ public:
 			s.push(c);
 		}
 
-		return s.empty();
+		return static_cast<int>(s.empty());
 	}
 };
 

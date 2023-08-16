@@ -20,8 +20,8 @@ public:
 		auto newString = string {};
 
 		for (const char& c : s) {
-			if (isalnum(c)) {
-				newString += isupper(c) ? static_cast<char>(tolower(c)) : c;
+			if (isalnum(c) != 0) {
+				newString += isupper(c) != 0 ? static_cast<char>(tolower(c)) : c;
 			}
 		}
 
@@ -29,7 +29,7 @@ public:
 			return true;
 		}
 
-		auto i = 0u;
+		auto i = 0U;
 		auto j = newString.length() - 1;
 
 		while (i < j) {

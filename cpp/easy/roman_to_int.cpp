@@ -42,9 +42,9 @@ public:
 			{ 'M', 1000 }
 		};
 
-		auto result = 0u;
+		auto result = 0U;
 
-		for (auto i = 0u; i < str.length(); i++) {
+		for (auto i = 0U; i < str.length(); i++) {
 			const bool lessThanNext = i < str.length() - 1 && romanToDecimal.at(str[i]) < romanToDecimal.at(str[i + 1]);
 
 			if (lessThanNext) {

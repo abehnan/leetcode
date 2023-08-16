@@ -16,7 +16,7 @@ class Solution {
 public:
 	static bool isSubsequence(const string& s, const string& t)
 	{
-		auto pos = 0ull;
+		auto pos = 0ULL;
 
 		for (const auto& c : s) {
 			auto newPos = t.find(c, pos);

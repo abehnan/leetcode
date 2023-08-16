@@ -8,7 +8,6 @@
  */
 
 #include <cassert>
-#include <numeric>
 #include <vector>
 
 using namespace std;
@@ -24,7 +23,7 @@ public:
 		dp[1] = 0;
 		dp[2] = min(cost[0], cost[1]);
 
-		for (auto i = 3u; i < dp.size(); i++) {
+		for (auto i = 3U; i < dp.size(); i++) {
 			dp[i] = min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
 		}
 

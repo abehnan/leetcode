@@ -15,11 +15,11 @@ public:
 	// O(n)
 	static ListNode* mergeTwoLists(ListNode* left, ListNode* right)
 	{
-		auto result = new ListNode();
-		auto ans = result;
+		auto* result = new ListNode();
+		auto* ans = result;
 
-		while (left || right) {
-			if (left && right) {
+		while (left != nullptr || right != nullptr) {
+			if (left != nullptr && right != nullptr) {
 				if (left->val < right->val) {
 					result->next = new ListNode(left->val);
 					left = left->next;
@@ -27,7 +27,7 @@ public:
 					result->next = new ListNode(right->val);
 					right = right->next;
 				}
-			} else if (left) {
+			} else if (left != nullptr) {
 				result->next = new ListNode(left->val);
 				left = left->next;
 			} else {
@@ -52,7 +52,7 @@ int main()
 	auto y = getNumber(secondNumber);
 	assert(y == 921);
 
-	auto list = Solution::mergeTwoLists(firstNumber, secondNumber);
+	auto* list = Solution::mergeTwoLists(firstNumber, secondNumber);
 	auto number = getNumber(list);
 	assert(number == 975421); // note that getNumber assumes the list stores a number in reverse order
 

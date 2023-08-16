@@ -22,7 +22,7 @@ public:
 		dp[0] = 1;
 		dp[1] = 1;
 
-		for (auto i = 2u; i < dp.size(); i++) {
+		for (auto i = 2U; i < dp.size(); i++) {
 			dp[i] = dp[i - 1] + dp[i - 2];
 		}
 

@@ -24,7 +24,7 @@ public:
 		}
 
 		for (auto i = 2; i <= rowIndex; i++) {
-			for (auto j = 1u; j < pascalsTriangle[i].size() - 1; j++) {
+			for (auto j = 1U; j < pascalsTriangle[i].size() - 1; j++) {
 				pascalsTriangle[i][j] = pascalsTriangle[i - 1][j - 1] + pascalsTriangle[i - 1][j];
 			}
 		}
@@ -37,17 +37,20 @@ public:
 	{
 		if (rowIndex == 0) {
 			return { 1 };
-		} else if (rowIndex == 1) {
+		}
+
+		if (rowIndex == 1) {
 			return { 1, 1 };
 		}
 
-		auto previous = vector<int> { 1, 1 }, current = vector<int> { 1, 2, 1 };
+		auto previous = vector<int> { 1, 1 };
+		auto current = vector<int> { 1, 2, 1 };
 
 		for (auto i = 2; i < rowIndex; i++) {
 			previous = current;
 			current.resize(current.size() + 1, 1);
 
-			for (auto j = 1u; j < current.size() - 1; j++) {
+			for (auto j = 1U; j < current.size() - 1; j++) {
 				current[j] = previous[j - 1] + previous[j];
 			}
 		}
