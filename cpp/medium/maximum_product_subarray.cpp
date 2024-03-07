@@ -37,7 +37,7 @@ public:
 int main()
 {
 	auto expected = 6;
-	auto input = vector<int> { 2, 3, -2, 4 };
+	auto input = vector { 2, 3, -2, 4 };
 	auto actual = Solution::maxProduct(input);
 	assert(actual == expected);
 

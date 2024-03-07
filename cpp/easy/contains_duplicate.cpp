@@ -39,7 +39,7 @@ public:
 	// O(n)
 	static bool containsDuplicate(const vector<int>& nums)
 	{
-		auto s = set<int>(nums.begin(), nums.end());
+		auto s = set(nums.begin(), nums.end());
 		return s.size() != nums.size();
 	}
 };

@@ -45,16 +45,16 @@ public:
 
 int main()
 {
-	auto input = vector<int> { 2, 7, 11, 15 };
-	auto expected = vector<int> { 1, 2 };
+	auto input = vector { 2, 7, 11, 15 };
+	auto expected = vector { 1, 2 };
 	assert(Solution::twoSum(input, 9) == expected);
 
-	input = vector<int> { 2, 3, 4 };
-	expected = vector<int> { 1, 3 };
+	input = vector { 2, 3, 4 };
+	expected = vector { 1, 3 };
 	assert(Solution::twoSum(input, 6) == expected);
 
-	input = vector<int> { -1, 0 };
-	expected = vector<int> { 1, 2 };
+	input = vector { -1, 0 };
+	expected = vector { 1, 2 };
 	assert(Solution::twoSum(input, -1) == expected);
 	return 0;
 }

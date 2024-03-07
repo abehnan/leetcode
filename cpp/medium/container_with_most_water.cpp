@@ -59,7 +59,7 @@ public:
 
 int main()
 {
-	auto input = vector<int> { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+	auto input = vector { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 	auto output = Solution::maxAreaBruteForce(input);
 	auto expected = 49;
 	assert(output == expected);

@@ -65,7 +65,6 @@ public:
 					}
 
 					return product;
-
 				});
 			return result;
 		}
@@ -121,7 +120,6 @@ public:
 int main()
 {
 	auto expected = vector<int> {};
-	auto result = vector<int> {};
 	auto input = vector<int> {};
 	auto actual = Solution::productExceptSelfTheHardWay(input);
 	assert(actual == expected);
@@ -142,7 +140,6 @@ int main()
 	assert(actual == expected);
 
 	expected = {};
-	result = {};
 	input = {};
 	actual = Solution::productExceptSelf(input);
 	assert(actual == expected);

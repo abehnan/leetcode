@@ -56,7 +56,7 @@ public:
 			s.push(c);
 		}
 
-		return static_cast<int>(s.empty());
+		return s.empty();
 	}
 };
 

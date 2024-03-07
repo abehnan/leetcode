@@ -18,7 +18,7 @@ public:
 		auto start = 0U;
 
 		// results[i][j] is true if str[i..j] is a palindrome
-		auto results = vector<vector<bool>>(n, vector<bool>(n, false));
+		auto results = vector(n, vector(n, false));
 
 		// All substrings of length 1 are palindromes
 		for (auto i = 0U; i < n; i++) {

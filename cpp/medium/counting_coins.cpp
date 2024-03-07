@@ -39,7 +39,7 @@ public:
 
 int main()
 {
-	auto coins = vector<int> { 4 };
+	auto coins = vector { 4 };
 	auto amount = 0;
 	auto actual = Solution::coinChange(coins, amount);
 	auto expected = 0;

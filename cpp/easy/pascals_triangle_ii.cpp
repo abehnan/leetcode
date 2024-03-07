@@ -61,7 +61,7 @@ public:
 
 int main()
 {
-	auto expected = vector<int> { 1 };
+	auto expected = vector { 1 };
 	auto actual = Solution::getRow(0);
 	assert(actual == expected);
 

@@ -49,9 +49,9 @@ public:
 		}
 
 		auto result = 0;
-		auto maxLeft = vector<int>(n, 0);
-		auto maxRight = vector<int>(n, 0);
-		auto minBoundary = vector<int>(n, 0);
+		auto maxLeft = vector(n, 0);
+		auto maxRight = vector(n, 0);
+		auto minBoundary = vector(n, 0);
 		auto currentMax = height[0];
 
 		for (auto i = 1; i < n; i++) {
@@ -80,24 +80,24 @@ public:
 
 int main()
 {
-	auto input = vector<int> { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+	auto input = vector { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
 	auto output = Solution::trapOptimized(input);
 	auto expected = 6;
 	assert(output == expected);
 
 	Solution::trap(input);
-	input = vector<int> { 4, 2, 0, 3, 2, 5 };
+	input = vector { 4, 2, 0, 3, 2, 5 };
 	output = Solution::trapOptimized(input);
 	expected = 9;
 	assert(output == expected);
 
-	input = vector<int> { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+	input = vector { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
 	output = Solution::trap(input);
 	expected = 6;
 	assert(output == expected);
 
 	Solution::trap(input);
-	input = vector<int> { 4, 2, 0, 3, 2, 5 };
+	input = vector { 4, 2, 0, 3, 2, 5 };
 	output = Solution::trap(input);
 	expected = 9;
 	assert(output == expected);

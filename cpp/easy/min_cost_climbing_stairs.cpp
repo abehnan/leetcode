@@ -33,17 +33,17 @@ public:
 
 int main()
 {
-	auto cost = vector<int> { 0, 0 };
+	auto cost = vector { 0, 0 };
 	auto expected = 0;
 	auto actual = Solution::minCostClimbingStairs(cost);
 	assert(actual == expected);
 
-	cost = vector<int> { 10, 15, 20 };
+	cost = vector { 10, 15, 20 };
 	expected = 15;
 	actual = Solution::minCostClimbingStairs(cost);
 	assert(actual == expected);
 
-	cost = vector<int> { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 };
+	cost = vector { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 };
 	expected = 6;
 	actual = Solution::minCostClimbingStairs(cost);
 	assert(actual == expected);

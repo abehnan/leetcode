@@ -38,11 +38,12 @@ public:
 		if (l + 1 == r) {
 			if (nums[l] == target) {
 				return l;
-			} else if (nums[r] == target) {
-				return r;
-			} else {
-				return -1;
 			}
+			if (nums[r] == target) {
+				return r;
+			}
+
+			return -1;
 		}
 
 		auto m = l + (r - l) / 2;
@@ -60,7 +61,7 @@ public:
 int main()
 {
 	auto expected = -1;
-	auto nums = vector<int> { 1 };
+	auto nums = vector { 1 };
 	auto target = 0;
 	auto actual = Solution::search(nums, target);
 	assert(actual == expected);

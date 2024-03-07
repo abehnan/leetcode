@@ -54,7 +54,7 @@ public:
 int main()
 {
 	auto expected = 0;
-	auto input = vector<int> { 0 };
+	auto input = vector { 0 };
 	auto actual = Solution::findMin(input);
 	assert(actual == expected);
 

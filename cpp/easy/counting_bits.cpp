@@ -28,7 +28,7 @@ public:
 
 int main()
 {
-	auto expected = std::vector<int> { 0, 1, 1 };
+	auto expected = std::vector { 0, 1, 1 };
 	auto actual = Solution::countBits(2);
 	assert(actual == expected);
 
