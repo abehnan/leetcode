@@ -15,7 +15,7 @@ using namespace std;
 
 class Solution {
 public:
-	static int houseRobber(vector<int>& nums)
+	static int houseRobber(const vector<int>& nums)
 	{
 		if (nums.size() == 1) {
 			return nums[0];
