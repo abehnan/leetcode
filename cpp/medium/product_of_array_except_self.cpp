@@ -16,7 +16,7 @@ using namespace std;
 
 class Solution {
 public:
-	static vector<int> productExceptSelf(vector<int>& nums)
+	static vector<int> productExceptSelf(const vector<int>& nums)
 	{
 		auto n = static_cast<int>(nums.size());
 		auto forwardProduct = 1;

@@ -6,7 +6,6 @@
  */
 
 #include <cassert>
-#include <vector>
 
 #include "../include/list_helper.h"
 

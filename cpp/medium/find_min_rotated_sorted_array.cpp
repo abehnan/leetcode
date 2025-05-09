@@ -45,7 +45,7 @@ public:
 			return min(nums[l], nums[r]);
 		}
 
-		auto n = l + (r - l) / 2;
+		const auto n = l + ((r - l) / 2);
 
 		return min(findMinInternal(nums, l, n), findMinInternal(nums, n + 1, r));
 	}

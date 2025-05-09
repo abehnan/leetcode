@@ -19,7 +19,7 @@ using namespace std;
 
 class Solution {
 public:
-	static vector<vector<string>> groupAnagrams(vector<string>& strs)
+	static vector<vector<string>> groupAnagrams(const vector<string>& strs)
 	{
 		unordered_map<string, vector<string>> anagrams;
 

@@ -17,15 +17,15 @@ public:
 	// O(n)
 	static int maxProduct(const std::vector<int>& nums)
 	{
-		auto n = static_cast<int>(nums.size());
+		const auto n = static_cast<int>(nums.size());
 		auto currentMax = nums[0];
 		auto currentMin = nums[0];
 		auto result = currentMax;
 
 		for (auto i = 1; i < n; i++) {
 			auto current = nums[i];
-			auto tempMax = max(current, max(currentMax * current, currentMin * current));
-			currentMin = min(current, min(currentMax * current, currentMin * current));
+			const auto tempMax = max({current, currentMax * current, currentMin * current});
+			currentMin = min({current, currentMax * current, currentMin * current});
 			currentMax = tempMax;
 			result = max(result, currentMax);
 		}

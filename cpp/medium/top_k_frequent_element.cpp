@@ -18,7 +18,7 @@ using namespace std;
 class Solution {
 public:
 	// this will fail if values have equal occurrences, e.g. [1, 2]
-	static vector<int> topKFrequentFirstAttempt(vector<int>& nums, int k)
+	static vector<int> topKFrequentFirstAttempt(const vector<int>& nums, const int k)
 	{
 		if (nums.empty()) {
 			return {};
@@ -39,14 +39,14 @@ public:
 		auto result = vector<int> {};
 		int i = 0;
 
-		for (auto it = results.rbegin(); it != results.rend() && i < k; i++, it++) {
+		for (auto it = results.rbegin(); it != results.rend() && i < k; i++, ++it) {
 			result.emplace_back(it->second);
 		}
 
 		return result;
 	}
 
-	static vector<int> topKFrequent(vector<int>& nums, int k)
+	static vector<int> topKFrequent(const vector<int>& nums, const int k)
 	{
 		if (nums.empty()) {
 			return {};

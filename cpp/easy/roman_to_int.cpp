@@ -45,9 +45,7 @@ public:
 		auto result = 0U;
 
 		for (auto i = 0U; i < str.length(); i++) {
-			const bool lessThanNext = i < str.length() - 1 && romanToDecimal.at(str[i]) < romanToDecimal.at(str[i + 1]);
-
-			if (lessThanNext) {
+			if (const bool lessThanNext = i < str.length() - 1 && romanToDecimal.at(str[i]) < romanToDecimal.at(str[i + 1])) {
 				result -= romanToDecimal.at(str[i]);
 			} else {
 				result += romanToDecimal.at(str[i]);

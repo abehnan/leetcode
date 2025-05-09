@@ -18,7 +18,7 @@ class Solution {
 public:
 	static int characterReplacement(const string& s, int k)
 	{
-		auto n = static_cast<int>(s.length());
+		const auto n = static_cast<int>(s.length());
 		auto result = 0;
 		auto left = 0;
 		auto maxFrequency = 0;

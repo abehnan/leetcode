@@ -18,7 +18,7 @@ public:
 		auto currentSum = nums[0];
 		auto maxSum = nums[0];
 
-		for (auto i = 1u; i < nums.size(); ++i) {
+		for (auto i = 1U; i < nums.size(); ++i) {
 			currentSum = max(nums[i], currentSum + nums[i]);
 			maxSum = max(maxSum, currentSum);
 		}
@@ -30,7 +30,7 @@ public:
 int main()
 {
 	auto expected = 1;
-	auto input = vector<int> { 1 };
+	auto input = vector { 1 };
 	auto actual = Solution::maxSubArray(input);
 	assert(actual == expected);
 

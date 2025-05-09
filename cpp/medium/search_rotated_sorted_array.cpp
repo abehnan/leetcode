@@ -46,7 +46,7 @@ public:
 			return -1;
 		}
 
-		auto m = l + (r - l) / 2;
+		const auto m = l + ((r - l) / 2);
 		auto result = searchInternal(nums, l, m, target);
 
 		if (result != -1) {

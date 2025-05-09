@@ -15,7 +15,7 @@ using namespace std;
 class Solution {
 public:
 	// O(n log n)
-	static int validAnagram(string s, string t)
+	static bool validAnagram(string s, string t)
 	{
 		sort(s.begin(), s.end());
 		sort(t.begin(), t.end());

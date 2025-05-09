@@ -14,10 +14,10 @@ using namespace std;
 
 class Solution {
 public:
-	static int validParentheses(const string& str)
+	static bool validParentheses(const string& str)
 	{
 		if (str.empty()) {
-			return 1;
+			return true;
 		}
 
 		auto s = stack<char> {};
@@ -28,9 +28,7 @@ public:
 				continue;
 			}
 
-			auto top = s.top();
-
-			switch (top) {
+			switch (s.top()) {
 				case '[':
 					if (c == ']') {
 						s.pop();

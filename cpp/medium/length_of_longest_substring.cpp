@@ -3,7 +3,6 @@
  */
 
 #include <cassert>
-#include <stack>
 #include <string>
 #include <unordered_set>
 
@@ -39,7 +38,10 @@ public:
 	static int lengthOfLongestSubstring(const string& str)
 	{
 		auto seen = unordered_set<char> {};
-		auto left = 0, right = 0, n = static_cast<int>(str.size()), ans = 0;
+		auto left = 0;
+		auto right = 0;
+		const auto n = static_cast<int>(str.size());
+		auto ans = 0;
 
 		while (left < n && right < n) {
 			if (seen.find(str[right]) == seen.end()) {

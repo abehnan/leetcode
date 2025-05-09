@@ -17,7 +17,7 @@ class Solution {
 public:
 	static int longestConsecutive(const vector<int>& nums)
 	{
-		auto s = unordered_set<int>(nums.begin(), nums.end());
+		const auto s = unordered_set(nums.begin(), nums.end());
 		auto longest = 0;
 
 		for (const auto& n : s) {
